@@ -1,15 +1,15 @@
-#Out of range error on line 10 - can't figure it out
+#gets not waiting for some reason so hard coded birthday
 
 puts "What year were you born in?"
-year = gets.chomp
+year = gets.chomp.to_i
 
 puts "What month were you born?"
-month = gets.chomp
+month = gets.chomp.to_i
 
 puts "What day were you born?"
-day = gets.chomp
+day = gets.chomp.to_i
 
-@birthday = Time.new(year, month, day)
+@birthday = Time.new(1991, 01, 29)
 puts "So your birthday is #{@birthday}. Lets celebrate all those birthdays!"
 
 def celebrator
@@ -25,17 +25,19 @@ def celebrator
 
 	if this_now > bd_now #hasn't yet had their birthday this year
 		count = now.year - @birthday.year
-		count -= 1
 		puts count
 		puts count.times {
-			"Happy Birthday"
+			puts "Happy Birthday"
 		}
-	else # has already had birthday this year
+	elsif this_now < bd_now # has already had birthday this year
 		count = now.year - @birthday.year
 		puts count
+		count -= 1
 		puts count.times {
-			"Happy Birthday"
+			puts "Happy Birthday"
 		}
+	else
+		puts "error"
 	end
 end
 
