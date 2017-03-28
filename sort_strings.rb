@@ -1,31 +1,55 @@
-
-
-
-def sort some_array 
-# This "wraps" recursive_sort.
-	recursive_sort some_array, []
-end
-
-def recursive_sort unsorted_array, sorted_array
-	sorted_array = []
-	
-	unsorted_array.each {|x| 
-		sort_value = x <=> x
-		if sort_value == 1
-			sorted_array.push(x)
-		elsif sort_value == 0
-			sorted_array.push(y)
-		elsif sort_value == -1
-			sorted_array.push(y)
+=begin
+def sort array
+	length = array.length
+	array_index = 0
+	length.times {
+		current_string = array[array_index]
+		next_string = array[array_index += 1]
+		if current_string > next_string
+			array[array_index += 1].rotate!
 		end
-		
+		array_index += 1
 	}
+	p array
+end
+=end
 
-p sorted_array
-
+def sort array
+	length = array.length
+	array_index = 0
+	array.each { |string|
+		puts string
+		array_index += 1
+		next_string = array[array_index]
+		if string > next_string
+			array[array_index].shift
+		end
+	}
+	p array
 end
 
 
-
-eg = %w(Sam Hannah Ben dad rose Harry)
+eg = %w[Sam Hannah Ben dad rose Harry]
 sort(eg)
+
+=begin
+@sentence = []
+
+puts "Type as many words as you want pressing enter after each one"
+puts "to exit enter a blank line"
+
+def input
+	word = gets.chomp
+	if word == ""
+		puts @sentence.sort
+		exit
+	else
+		@sentence.push(word)
+		input
+	end
+end
+
+input
+
+=end
+
