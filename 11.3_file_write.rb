@@ -15,6 +15,6 @@ read_array = YAML::load read_string
 puts(read_string == string)
 puts(read_array == array )
 
-Dir.chdir("..")
-puts Dir["a*.rb"]
+
+puts Dir.chdir("..")["a*.rb"]
           
