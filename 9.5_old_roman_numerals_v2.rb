@@ -58,8 +58,8 @@ class Old_numerals
 			v: v,
 			i: i
 		}
-		puts "Int =" + @integer.to_s
-		puts letters
+		#puts "Int =" + @integer.to_s
+		#puts letters
 		#numeral_constructor(letters)
 	end
 
